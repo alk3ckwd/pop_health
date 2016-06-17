@@ -25,22 +25,23 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="/dashboard">Dashboard</a></li>
+						<li class="{% if nbar == 'dash' %}active{% endif %}"><a href="/dashboard">Dashboard</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports<span class="caret"></span></a>
+							<a class="dropdown-toggle {% if nbar == 'reports' %}active{% endif %}" data-toggle="dropdown" href="#">Reports<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Standard Measure Reports</a></li>
 								<li><a href="#">Custom Reports</a></li>
 								<li><a href="#">Patient Level Reports</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Alerts</a></li>
-						<li><a href="#">Users</a></li>
-						<li><a href="#">Settings</a></li>
-						<li><a href="/patient_search_results">Patient Search</a></li>
+						<li {% if nbar == 'alerts' %}class='active'{% endif %}><a href="#">Alerts</a></li>
+						<li {% if nbar == 'users' %}class='active'{% endif %}><a href="#">Users</a></li>
+						<li {% if nbar == 'settings' %}class='active'{% endif %}><a href="#">Settings</a></li>
+						<li {% if nbar == 'search_results' %}class='active'{% endif %}><a href="/patient_search_results">Patient Search</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+						<li><a><input type="text" value="Patient Search"></input><span class="glyphicon glyphicon-search"></span></a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>
 					</ul>
 				</div>
 			</div>
