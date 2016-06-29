@@ -7,4 +7,7 @@ def patient_list(request):
 	return render(request, 'aggregate_health/patient_search_results.html', {'patients': patients, 'nbar': 'search_results'})
 
 def dashboard(request):
-	return render(request, 'aggregate_health/dashboard.html', {'nbar':'dash'})
+	return render(request, 'aggregate_health/dashboard.html', {'nbar':'dash', 'tableloop': range(6)})
+
+def alert_builder(request):
+	return render(request, 'aggregate_health/alert_builder.html', {'nbar':'alert_builder'})
